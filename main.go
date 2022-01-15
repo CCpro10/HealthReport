@@ -1,6 +1,7 @@
 package main
 
 import (
+	middleware "HealthReport/Middleware"
 	"HealthReport/Model"
 	"HealthReport/Service"
 	"HealthReport/controller"
@@ -14,12 +15,14 @@ func main() {
 	Model.InitMySQL()
 
 	r := gin.Default()
+	r.Use(middleware.Cors())
+
 	r.POST("/student_id", Service.SaveStudentId)
 	r.DELETE("/student_id", Service.DeleteStudentId)
 
 	c := cron.New()
-	_=c.AddFunc("* */2 6-23 * * *", controller.Report)
-	_=c.AddFunc("* * 0-5 * * *",controller.ReportAll)
+	_ = c.AddFunc("* */2 6-23 * * *", controller.Report)
+	_ = c.AddFunc("* * 0-5 * * *", controller.ReportAll)
 
 	c.Start()
 
@@ -29,4 +32,3 @@ func main() {
 
 	//select {}
 }
-
