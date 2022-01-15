@@ -9,7 +9,6 @@ import (
 	"gorm.io/gorm"
 )
 
-
 //mysql,gorm配置
 var DB *gorm.DB
 
@@ -30,7 +29,6 @@ func InitMySQL() {
 	//先创建表
 	if err = DB.AutoMigrate(
 		Student{},
-
 	); err != nil {
 		log.Panicln(err)
 	}

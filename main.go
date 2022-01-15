@@ -18,11 +18,12 @@ func main() {
 	r.Use(middleware.Cors())
 
 	r.POST("/student_id", Service.SaveStudentId)
-	r.DELETE("/student_id", Service.DeleteStudentId)
+	r.POST("/delete_student_id", Service.DeleteStudentId)
+	r.POST("/url", Service.GetToken)
 
 	c := cron.New()
 	_ = c.AddFunc("* */2 6-23 * * *", controller.Report)
-	_ = c.AddFunc("* * 0-5 * * *", controller.ReportAll)
+	_ = c.AddFunc("* * 0-5/5 * * *", controller.ReportAll)
 
 	c.Start()
 
