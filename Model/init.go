@@ -1,7 +1,7 @@
 package Model
 
 import (
-	"HealthReport/conf"
+	"main/config"
 
 	"log"
 
@@ -13,11 +13,10 @@ import (
 var DB *gorm.DB
 
 func InitMySQL() {
-
-	dsn := conf.Config.MYSQL.Username + ":" +
-		conf.Config.MYSQL.Password + "@tcp(" +
-		conf.Config.MYSQL.Addr + ")/" +
-		conf.Config.MYSQL.Database + "?charset=utf8mb4&parseTime=True&loc=Local"
+	dsn := config.Config.MYSQL.Username + ":" +
+		config.Config.MYSQL.Password + "@tcp(" +
+		config.Config.MYSQL.Addr + ")/" +
+		config.Config.MYSQL.Database + "?charset=utf8mb4&parseTime=True&loc=Local"
 
 	var err error
 	DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{}) //这里用短变量声明会有歧义
@@ -28,6 +27,7 @@ func InitMySQL() {
 
 	//先创建表
 	if err = DB.AutoMigrate(
+
 		Student{},
 	); err != nil {
 		log.Panicln(err)

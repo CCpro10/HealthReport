@@ -1,4 +1,4 @@
-package conf
+package config
 
 import (
 	"fmt"
@@ -7,11 +7,6 @@ import (
 )
 
 type Conf struct {
-	Email struct {
-		Emailpassword string `yaml:"emailpassword"`
-		Id            string `yaml:"id"`
-	}
-
 	Redis struct {
 		Addr     string `yaml:"addr"`
 		Password string `yaml:"password"`
@@ -23,12 +18,15 @@ type Conf struct {
 		Addr     string `yaml:"addr"`
 		Database string `yaml:"database"`
 	}
+	Server struct {
+		Port string `yaml:"port"`
+	}
 }
 
 //获取配置
 func GetConf() *Conf {
 	var c = Conf{}
-	yamlFile, err := ioutil.ReadFile("./conf/conf.yaml")
+	yamlFile, err := ioutil.ReadFile("./config/conf.yaml")
 	if err != nil {
 		fmt.Println(err.Error())
 	}

@@ -1,0 +1,73 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "可以帮NCU students每天健康打卡的脚本",
+        "title": "自动健康打卡",
+        "contact": {},
+        "version": "1.0"
+    },
+    "paths": {
+        "/report": {
+            "post": {
+                "description": "先点击右边的 try it out 输入网址 ,再点击下方的Execute(执行)即可帮您每天自动打卡",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "健康打卡"
+                ],
+                "summary": "点这里开始自动健康打卡",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "这里下面填健康打卡界面的网址,进入每日健康打卡页面,点击右上角,再点击复制链接",
+                        "name": "Url",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "这里下面填打卡的详细地址,可不填,默认为 江西省南昌大学",
+                        "name": "AddressInfo",
+                        "in": "formData"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"信息\": \"成功\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "先点击右上角的 try it out 输入网址 ,再点击下方的Execute(执行)即可帮您取消每天自动打卡",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "健康打卡"
+                ],
+                "summary": "点这里取消自动健康打卡",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "这里填健康打卡界面的网站地址",
+                        "name": "Url",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"信息\": \"取消成功\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
