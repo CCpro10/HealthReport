@@ -14,7 +14,6 @@ import (
 // @Produce json
 // @Param Url formData string true "这里下面填健康打卡界面的网址, 进入每日健康打卡页面, 点击右上角, 再点击复制链接"
 // @Param AddressInfo formData string false "这里下面填打卡的详细地址, 可以不填, 默认为:江西省南昌大学"
-// @Success 200 {string} string "{"信息": "成功"}"
 // @Router /report [post]
 func BeginReport(c *gin.Context) {
 	url, _ := c.GetPostForm("Url")

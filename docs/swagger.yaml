@@ -15,11 +15,7 @@ paths:
         type: string
       produces:
       - application/json
-      responses:
-        "200":
-          description: '{"信息": "取消成功"}'
-          schema:
-            type: string
+      responses: {}
       summary: 如果你不再想要每天自动健康打卡了,点这里取消自动健康打卡
       tags:
       - 健康打卡
@@ -37,11 +33,7 @@ paths:
         type: string
       produces:
       - application/json
-      responses:
-        "200":
-          description: '{"信息": "成功"}'
-          schema:
-            type: string
+      responses: {}
       summary: 点这里开始自动健康打卡
       tags:
       - 健康打卡

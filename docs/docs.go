@@ -48,14 +48,7 @@ var doc = `{
                         "in": "formData"
                     }
                 ],
-                "responses": {
-                    "200": {
-                        "description": "{\"信息\": \"成功\"}",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                }
+                "responses": {}
             },
             "delete": {
                 "description": "先点击右上角的 try it out 输入网址 ,再点击下方的Execute(执行)即可帮您取消每天自动打卡,点击后查看下面的信息看看有没有打卡成功",
@@ -75,14 +68,7 @@ var doc = `{
                         "required": true
                     }
                 ],
-                "responses": {
-                    "200": {
-                        "description": "{\"信息\": \"取消成功\"}",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                }
+                "responses": {}
             }
         }
     }

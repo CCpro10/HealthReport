@@ -12,7 +12,6 @@ import (
 // @Tags    健康打卡
 // @Produce json
 // @Param Url formData string true "这里下面填健康打卡界面的网址, 进入每日健康打卡页面, 点击右上角, 再点击复制链接"
-// @Success 200 {string} string "{"信息": "取消成功"}"
 // @Router /report [delete]
 func EndReport(c *gin.Context) {
 	url, _ := c.GetPostForm("Url")
