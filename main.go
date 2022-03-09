@@ -15,7 +15,7 @@ import (
 )
 
 // @title           自动健康打卡脚本
-// @version         1.0
+// @version         测试版 v0.9
 // @description     可以帮NCU students每天健康打卡的脚本
 func main() {
 	log.SetFlags(log.Lshortfile)
