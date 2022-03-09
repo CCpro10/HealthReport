@@ -14,11 +14,10 @@ import (
 	"main/middleware"
 )
 
-// @title           自动健康打卡
+// @title           自动健康打卡脚本
 // @version         1.0
 // @description     可以帮NCU students每天健康打卡的脚本
 func main() {
-
 	log.SetFlags(log.Lshortfile)
 
 	Model.InitMySQL()
@@ -33,8 +32,8 @@ func main() {
 	r.DELETE("/report", api.EndReport)
 
 	c := cron.New()
-	_ = c.AddFunc("* */2 6-23 * * *", Service.ReportAll)
-	_ = c.AddFunc("* * 0-5/5 * * *", Service.ReportInOrder)
+	_ = c.AddFunc("* */5 4-23 * * *", Service.ReportAll)
+	_ = c.AddFunc("* * 0-4/5 * * *", Service.ReportInOrder)
 
 	c.Start()
 

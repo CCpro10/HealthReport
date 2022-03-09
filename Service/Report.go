@@ -20,6 +20,9 @@ func ReportInOrder() {
 			continue
 		}
 
+		if Model.AlreadyReport(id) { //已经打卡了就不用打卡了
+			continue
+		}
 		_ = utils.LoginAndReportById(id)
 
 	}
@@ -33,7 +36,6 @@ func ReportAll() {
 	Model.DB.Where("reported_day != ?", t).Find(&students)
 
 	for _, student := range students {
-
 		_ = utils.LoginAndReportById(student.ID)
 	}
 

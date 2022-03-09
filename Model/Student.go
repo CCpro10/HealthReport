@@ -31,6 +31,15 @@ func IsExistById(id uint) bool {
 	return true
 }
 
+func AlreadyReport(id uint) bool {
+	var student Student
+	DB.Find(&student, id)
+	if student.ReportedDay == time.Now().Day() {
+		return true
+	}
+	return false
+}
+
 //通过id判断学生是否存在
 func IsExistByStudentId(studentId string) bool {
 	var s Student
