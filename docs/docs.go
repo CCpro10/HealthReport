@@ -25,7 +25,7 @@ var doc = `{
     "paths": {
         "/report": {
             "post": {
-                "description": "先点击右边的 try it out 输入网址 ,再点击下方的Execute(执行)即可帮您每天自动打卡",
+                "description": "!!!!!!!!!先点击右边的 try it out 输入网址 ,再点击下方的Execute(执行)即可帮您每天自动打卡,点击后查看下面的信息看看有没有打卡成功",
                 "produces": [
                     "application/json"
                 ],
@@ -36,14 +36,14 @@ var doc = `{
                 "parameters": [
                     {
                         "type": "string",
-                        "description": "这里下面填健康打卡界面的网址,进入每日健康打卡页面,点击右上角,再点击复制链接",
+                        "description": "这里下面填健康打卡界面的网址, 进入每日健康打卡页面, 点击右上角, 再点击复制链接",
                         "name": "Url",
                         "in": "formData",
                         "required": true
                     },
                     {
                         "type": "string",
-                        "description": "这里下面填打卡的详细地址,可不填,默认为 江西省南昌大学",
+                        "description": "这里下面填打卡的详细地址, 可以不填, 默认为:江西省南昌大学",
                         "name": "AddressInfo",
                         "in": "formData"
                     }
@@ -58,18 +58,18 @@ var doc = `{
                 }
             },
             "delete": {
-                "description": "先点击右上角的 try it out 输入网址 ,再点击下方的Execute(执行)即可帮您取消每天自动打卡",
+                "description": "先点击右上角的 try it out 输入网址 ,再点击下方的Execute(执行)即可帮您取消每天自动打卡,点击后查看下面的信息看看有没有打卡成功",
                 "produces": [
                     "application/json"
                 ],
                 "tags": [
                     "健康打卡"
                 ],
-                "summary": "点这里取消自动健康打卡",
+                "summary": "如果你不再想要每天自动健康打卡了,点这里取消自动健康打卡",
                 "parameters": [
                     {
                         "type": "string",
-                        "description": "这里填健康打卡界面的网站地址",
+                        "description": "这里下面填健康打卡界面的网址, 进入每日健康打卡页面, 点击右上角, 再点击复制链接",
                         "name": "Url",
                         "in": "formData",
                         "required": true
@@ -103,7 +103,7 @@ var SwaggerInfo = swaggerInfo{
 	Host:        "",
 	BasePath:    "",
 	Schemes:     []string{},
-	Title:       "自动健康打卡",
+	Title:       "自动健康打卡脚本",
 	Description: "可以帮NCU students每天健康打卡的脚本",
 }
 

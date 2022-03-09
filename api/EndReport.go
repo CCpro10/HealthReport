@@ -7,11 +7,11 @@ import (
 	"net/http"
 )
 
-// @Summary 点这里取消自动健康打卡
-// @Description 先点击右上角的 try it out 输入网址 ,再点击下方的Execute(执行)即可帮您取消每天自动打卡
+// @Summary 如果你不再想要每天自动健康打卡了,点这里取消自动健康打卡
+// @Description 先点击右上角的 try it out 输入网址 ,再点击下方的Execute(执行)即可帮您取消每天自动打卡,点击后查看下面的信息看看有没有打卡成功
 // @Tags    健康打卡
 // @Produce json
-// @Param Url formData string true "这里填健康打卡界面的网站地址"
+// @Param Url formData string true "这里下面填健康打卡界面的网址, 进入每日健康打卡页面, 点击右上角, 再点击复制链接"
 // @Success 200 {string} string "{"信息": "取消成功"}"
 // @Router /report [delete]
 func EndReport(c *gin.Context) {

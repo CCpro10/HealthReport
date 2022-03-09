@@ -9,11 +9,11 @@ import (
 )
 
 // @Summary 点这里开始自动健康打卡
-// @Description 先点击右边的 try it out 输入网址 ,再点击下方的Execute(执行)即可帮您每天自动打卡
+// @Description !!!!!!!!!先点击右边的 try it out 输入网址 ,再点击下方的Execute(执行)即可帮您每天自动打卡,点击后查看下面的信息看看有没有打卡成功
 // @Tags    健康打卡
 // @Produce json
-// @Param Url formData string true "这里下面填健康打卡界面的网址,进入每日健康打卡页面,点击右上角,再点击复制链接"
-// @Param AddressInfo formData string false "这里下面填打卡的详细地址,可不填,默认为 江西省南昌大学"
+// @Param Url formData string true "这里下面填健康打卡界面的网址, 进入每日健康打卡页面, 点击右上角, 再点击复制链接"
+// @Param AddressInfo formData string false "这里下面填打卡的详细地址, 可以不填, 默认为:江西省南昌大学"
 // @Success 200 {string} string "{"信息": "成功"}"
 // @Router /report [post]
 func BeginReport(c *gin.Context) {
