@@ -25,7 +25,7 @@ var doc = `{
     "paths": {
         "/report": {
             "post": {
-                "description": "!!!!!!!!!先点击右边的 try it out 输入网址 ,再点击下方的Execute(执行)即可帮您每天自动打卡,点击后查看下面的信息看看有没有打卡成功",
+                "description": "!!!!!!!!!先点击右边的 Try it out ,然后输入网址 ,再点击下方的Execute(执行),即可开始每天自动打卡,点击后查看下面的信息看看有没有打卡成功",
                 "produces": [
                     "application/json"
                 ],
@@ -36,7 +36,7 @@ var doc = `{
                 "parameters": [
                     {
                         "type": "string",
-                        "description": "这里下面填健康打卡界面的网址, 进入每日健康打卡页面, 点击右上角, 再点击复制链接",
+                        "description": "这里下面填健康打卡界面的网址: 具体看图片操作",
                         "name": "Url",
                         "in": "formData",
                         "required": true
@@ -71,7 +71,13 @@ var doc = `{
                 "responses": {}
             }
         }
-    }
+    },
+    "tags": [
+        {
+            "description": "###  这里按步骤打开后,再按企业微信或微信上的提示复制\r\n\u003cdiv class=\"half\" style=\"text-align: center;\"\u003e\u003e\r\n    \u003cimg src=\"http://incu-campus-num.ncuos.com/health_report/b37b3cad8e3fb12fb6e0736bcf35355.jpg?x-oss-process=image/resize,m_lfit,h_200,w_200\" alt=\"提示\"\u003e\r\n    \u003cimg src=\"http://incu-campus-num.ncuos.com/health_report/7928c85e54dbde094066e4a5f1ae6a4.jpg?x-oss-process=image/resize,m_lfit,h_400,w_400\" alt=\"提示\"\u003e\r\n    \u003cimg src=\"http://incu-campus-num.ncuos.com/health_report/b7127ddb8a11df661dcba50bbb76cbf.jpg?x-oss-process=image/resize,m_lfit,h_400,w_400\" alt=\"提示\"\u003e\r\n\u003c/div\u003e",
+            "name": "健康打卡"
+        }
+    ]
 }`
 
 type swaggerInfo struct {
@@ -90,7 +96,7 @@ var SwaggerInfo = swaggerInfo{
 	BasePath:    "",
 	Schemes:     []string{},
 	Title:       "自动健康打卡脚本",
-	Description: "可以帮NCU students每天健康打卡的脚本",
+	Description: "可以帮NCU students每天健康打卡的脚本, 以后辅导员再也不用催我打卡啦",
 }
 
 type s struct{}

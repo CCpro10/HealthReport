@@ -16,7 +16,9 @@ import (
 
 // @title           自动健康打卡脚本
 // @version         测试版 v0.9
-// @description     可以帮NCU students每天健康打卡的脚本
+// @description     可以帮NCU students每天健康打卡的脚本, 以后辅导员再也不用催我打卡啦
+// @Tag.name  获取网址:
+// @tag.description.markdown
 func main() {
 	log.SetFlags(log.Lshortfile)
 
@@ -43,3 +45,9 @@ func main() {
 
 	//select {}
 }
+
+//## <center> 获取打卡界面的网址
+//
+//### <center> 这里打开后再复制 ![第一步](http://incu-campus-num.ncuos.com/health_report/b37b3cad8e3fb12fb6e0736bcf35355.jpg?x-oss-process=image/resize,m_lfit,h_80,w_80 "图片")
+//### <center>  这里复制 ![第二步](http://incu-campus-num.ncuos.com/health_report/7928c85e54dbde094066e4a5f1ae6a4.jpg?x-oss-process=image/resize,m_lfit,h_140,w_140 "")
+//###  <center> 或者是这里复制 ![第二步](http://incu-campus-num.ncuos.com/health_report/b7127ddb8a11df661dcba50bbb76cbf.jpg?x-oss-process=image/resize,m_lfit,h_150,w_150 "")
