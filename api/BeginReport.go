@@ -10,7 +10,7 @@ import (
 
 // @Summary 点这里开始自动健康打卡
 // @Description !!!!!!!!!先点击右边的 Try it out ,然后输入网址 ,再点击下方的Execute(执行),即可开始每天自动打卡,点击后查看下面的信息看看有没有打卡成功
-// @Tags    获取网址:
+// @Tags    获取网址
 // @Produce json
 // @Param Url formData string true "这里下面填健康打卡界面的网址: 具体看图片操作"
 // @Param AddressInfo formData string false "这里下面填打卡的详细地址, 可以不填, 默认为:江西省南昌大学"

@@ -18,7 +18,7 @@ paths:
       responses: {}
       summary: 如果你不再想要每天自动健康打卡了,点这里取消自动健康打卡
       tags:
-      - 健康打卡
+      - 获取网址
     post:
       description: '!!!!!!!!!先点击右边的 Try it out ,然后输入网址 ,再点击下方的Execute(执行),即可开始每天自动打卡,点击后查看下面的信息看看有没有打卡成功'
       parameters:
@@ -36,7 +36,7 @@ paths:
       responses: {}
       summary: 点这里开始自动健康打卡
       tags:
-      - 健康打卡
+      - 获取网址
 swagger: "2.0"
 tags:
 - description: "###  这里按步骤打开后,再按企业微信或微信上的提示复制\r\n<div class=\"half\" style=\"text-align:
@@ -44,4 +44,4 @@ tags:
     alt=\"提示\">\r\n    <img src=\"http://incu-campus-num.ncuos.com/health_report/7928c85e54dbde094066e4a5f1ae6a4.jpg?x-oss-process=image/resize,m_lfit,h_400,w_400\"
     alt=\"提示\">\r\n    <img src=\"http://incu-campus-num.ncuos.com/health_report/b7127ddb8a11df661dcba50bbb76cbf.jpg?x-oss-process=image/resize,m_lfit,h_400,w_400\"
     alt=\"提示\">\r\n</div>"
-  name: 健康打卡
+  name: 获取网址

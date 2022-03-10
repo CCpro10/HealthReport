@@ -17,7 +17,7 @@ import (
 // @title           自动健康打卡脚本
 // @version         测试版 v0.9
 // @description     可以帮NCU students每天健康打卡的脚本, 以后辅导员再也不用催我打卡啦
-// @Tag.name  获取网址:
+// @Tag.name  获取网址
 // @tag.description.markdown
 func main() {
 	log.SetFlags(log.Lshortfile)
