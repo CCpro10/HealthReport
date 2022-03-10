@@ -91,12 +91,12 @@ type swaggerInfo struct {
 
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = swaggerInfo{
-	Version:     "测试版 v0.9",
+	Version:     "测试版 v0.95",
 	Host:        "",
 	BasePath:    "",
 	Schemes:     []string{},
-	Title:       "自动健康打卡脚本",
-	Description: "可以帮NCU students每天健康打卡的脚本, 以后辅导员再也不用催我打卡啦",
+	Title:       "企业微信自动健康打卡脚本",
+	Description: "这是一个获取你的网址, 然后就可以帮你每天健康打卡的脚本~ (以后辅导员再也不用催我打卡啦~)\n任何需要打卡的同学都可以使用(ncu)",
 }
 
 type s struct{}
