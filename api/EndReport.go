@@ -19,16 +19,16 @@ func EndReport(c *gin.Context) {
 	validate := validator.New()
 	e := validate.Var(url, "required,url")
 	if e != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"信息": "请输入正确的地址"})
+		c.JSON(http.StatusBadRequest, gin.H{"msg": "请输入正确的地址"})
 		return
 	}
 	studentId, e := Service.DeleteStudentInfoByUrl(url)
 	if e != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"信息": e.Error()})
+		c.JSON(http.StatusBadRequest, gin.H{"msg": e.Error()})
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{"信息": "学号为:" + studentId + "的同学,已帮您结束自动打卡"})
+	c.JSON(http.StatusOK, gin.H{"msg": "学号为:" + studentId + "的同学,已帮您结束自动打卡"})
 	return
 
 }

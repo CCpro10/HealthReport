@@ -23,13 +23,13 @@ func BeginReport(c *gin.Context) {
 	validate := validator.New()
 	e := validate.Var(url, "required,url")
 	if e != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"信息": "请输入正确的地址"})
+		c.JSON(http.StatusBadRequest, gin.H{"msg": "请输入正确的地址"})
 		return
 	}
 
 	e = validate.Var(addressInfo, "max=150")
 	if e != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"信息": "详细地址请不要填太长"})
+		c.JSON(http.StatusBadRequest, gin.H{"msg": "详细地址请不要填太长"})
 		return
 	}
 
@@ -41,22 +41,22 @@ func BeginReport(c *gin.Context) {
 	id, studentId, e := Service.SaveInfo(url, addressInfo)
 	if e != nil {
 		if e.Error() == "已经帮你健康打卡啦" {
-			c.JSON(http.StatusOK, gin.H{"信息": "已经帮你健康打卡啦,打卡地址修改为:" + addressInfo})
+			c.JSON(http.StatusOK, gin.H{"msg": "已经帮你健康打卡啦,打卡地址修改为:" + addressInfo})
 			return
 		}
 
-		c.JSON(http.StatusBadRequest, gin.H{"信息": e.Error()})
+		c.JSON(http.StatusBadRequest, gin.H{"msg": e.Error()})
 		return
 	}
 
 	//登录和打卡
 	e = utils.LoginAndReportById(id)
 	if e != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"信息": e.Error()})
+		c.JSON(http.StatusBadRequest, gin.H{"msg": e.Error()})
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{"信息": "学号为:" + studentId + "的同学,已开始帮您每天自动打卡"})
+	c.JSON(http.StatusOK, gin.H{"msg": "学号为:" + studentId + "的同学,已开始帮您每天自动打卡"})
 	return
 
 }
