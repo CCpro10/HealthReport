@@ -41,7 +41,7 @@ func LoginAndReportById(id uint) error {
 	payload.Set("temperatureStatus", "正常")
 	payload.Set("isIll", "否")
 	payload.Set("closeHb", "否")
-	payload.Set("closeIll", "是")
+	payload.Set("closeIll", "否")
 	payload.Set("healthDetail", "无异常")
 	payload.Set("isIsolation", "否")
 	payload.Set("isolationPlace", "无")
@@ -68,7 +68,6 @@ func LoginAndReportById(id uint) error {
 	}
 
 	Model.UpdateReportedDayById(id)
-
 	return nil
 
 	//如果成功,把打卡时间修改为当天
