@@ -48,7 +48,7 @@
                         "type": "string",
                         "description": "这里下面填健康打卡界面的网址, 进入每日健康打卡页面, 点击右上角, 再点击复制链接",
                         "name": "Url",
-                        "in": "formData",
+                        "in": "query",
                         "required": true
                     }
                 ],
