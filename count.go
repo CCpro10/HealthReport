@@ -9,9 +9,7 @@ import (
 var C int64
 
 func main() {
-
 	Model.InitMySQL()
-
 	http.HandleFunc("/", CountHandler)
 	_ = http.ListenAndServe(":8889", nil)
 }
