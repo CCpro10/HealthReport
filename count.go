@@ -13,7 +13,7 @@ func main() {
 	Model.InitMySQL()
 
 	http.HandleFunc("/", CountHandler)
-	_ = http.ListenAndServe("127.0.0.1:8889", nil)
+	_ = http.ListenAndServe(":8889", nil)
 }
 
 // handler函数
