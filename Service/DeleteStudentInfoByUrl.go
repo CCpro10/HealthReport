@@ -37,7 +37,7 @@ func DeleteStudentInfoByUrl(URL string) (studentId string, e error) {
 	_ = json.Unmarshal(body, &m)
 
 	if m.Code != "308" {
-		e = errors.New("你复制的网址失效啦(不能用浏览器打开网站再复制哦!)\n请先退出,重新按图片步骤, 重新进入 a学生疫情常态化管理 复制网址")
+		e = errors.New("你复制的网址失效啦(用浏览器打开网站再复制会失效哦哦!)    请重新按图片步骤,先退出,重新进入 a学生疫情常态化管理 复制网址")
 		return
 	}
 
