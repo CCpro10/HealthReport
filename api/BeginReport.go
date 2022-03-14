@@ -56,8 +56,8 @@ func BeginReport(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{"msg": "学号为:" + studentId + "的同学,从现在开始帮您每天自动打卡          " +
-		"觉得好用的话分享给室友或同学支持一下喔(求求了),脚本由本校同学研发(就是我),并且会长期维护"})
+	c.JSON(http.StatusOK, gin.H{"msg": "学号为:" + studentId + "的同学,从现在开始帮您每天自动打卡~~" +
+		"觉得好用的话可以分享给朋友支持一下喔,脚本由本校同学研发(就是我),且会长期维护"})
 	return
 
 }
