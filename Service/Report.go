@@ -24,7 +24,7 @@ func ReportInOrder() {
 			continue
 		}
 		_ = utils.LoginAndReportById(id)
-		time.Sleep(time.Second / 10) //降低并发
+		time.Sleep(time.Second * 4) //降低并发
 	}
 }
 

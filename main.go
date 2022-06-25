@@ -35,8 +35,8 @@ func main() {
 	r.DELETE("/report", api.EndReport)
 
 	c := cron.New()
-	_ = c.AddFunc("* */10 4-23 * * *", Service.ReportAll)
-	_ = c.AddFunc("* * 0-4/4 * * *", Service.ReportInOrder)
+	_ = c.AddFunc("1 */10 4-23 * * *", Service.ReportAll)
+	_ = c.AddFunc("0 0  8  * * *", Service.ReportInOrder)
 
 	c.Start()
 
