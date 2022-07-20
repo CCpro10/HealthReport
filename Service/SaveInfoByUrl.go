@@ -11,7 +11,7 @@ import (
 	"strings"
 )
 
-//获取token,如果此用户为新用户则会保存新用户信息
+// SaveInfo 获取token,如果此用户为新用户则会保存新用户信息
 func SaveInfo(URL string, addr string) (id uint, studentId string, e error) {
 	Url, _ := url.ParseRequestURI(URL)
 	//获取query中的code
@@ -45,24 +45,27 @@ func SaveInfo(URL string, addr string) (id uint, studentId string, e error) {
 	}
 
 	studentId = m.Data.UserId
+	token := response.Header.Get("Token")
+	u := Model.Student{
+		Token:       token,
+		AddressInfo: addr,
+	}
 
 	//已经存了此用户的信息
 	if Model.IsExistByStudentId(studentId) {
-		Model.DB.Model(&Model.Student{}).Where("student_id=?", studentId).Update("address_info", addr)
+		Model.DB.Model(&Model.Student{}).Where("student_id=?", studentId).Updates(&u)
 		e = errors.New("已经帮你健康打卡啦")
 		return
 	}
 
 	startYear, _ := strconv.ParseInt(m.Data.Grade, 10, 64)
 	s := Model.Student{
-		Token:       response.Header.Get("Token"),
+		Token:       token,
 		StudentId:   studentId,
 		AddressInfo: addr,
 		StartYear:   int(startYear),
 	}
-
 	Model.DB.Create(&s)
 
 	return s.ID, studentId, nil
-
 }
